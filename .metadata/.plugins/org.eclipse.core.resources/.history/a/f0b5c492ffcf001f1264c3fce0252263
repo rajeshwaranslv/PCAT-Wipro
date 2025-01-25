@@ -1,0 +1,28 @@
+package com.wipro.oops;
+
+
+class ParentClass{
+//	Super() it is used call the parent class and first line of the constructor
+//	Default 0 parameter - calls the 0 parameter constructor
+	
+	public ParentClass() {
+		System.out.println("Parent Constructor");
+	}
+}
+class Child extends ParentClass{
+	public Child() {
+//		super();
+		System.out.println("Child Contructor");
+	}
+}
+
+
+public class ChainingEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stubCh
+		
+		Child c=new Child();
+	}
+
+}

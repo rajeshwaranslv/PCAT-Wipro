@@ -1,0 +1,49 @@
+package com.wipro.oops;
+
+// Acquiring the properties of one class to another
+// ISA relationship when class and method declared as final can not override
+
+// Inherited Method
+// Overridden Method
+// Specialized method
+class A{
+	int a=99;
+	public void disp() {
+		System.out.println("Class A method");
+	}
+}
+class B extends A{
+	int b=100;
+	B(){
+		super();
+	}
+	@Override
+	public void disp() {
+		System.out.println("Class B method");
+	}
+}
+class C extends B{
+	int c=100;
+	C(){
+		super();
+	}
+	public void disp() {
+		System.out.println("Class C method");
+	}
+}
+
+public class InheritanceEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		A a=new A();
+		B b=new B();
+		C c=new C();
+
+		b.disp();
+		c.disp();
+		a.disp();
+		
+	}
+
+}

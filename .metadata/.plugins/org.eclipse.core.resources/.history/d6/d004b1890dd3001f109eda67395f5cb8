@@ -1,0 +1,40 @@
+package com.wipro.Collections.day8;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+public class IteratorUserExample {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+
+        // Create a List to store integer inputs
+        List<Integer> numbers = new ArrayList<>();
+
+        // Ask how many numbers the user wants to enter
+        System.out.print("How many integers do you want to enter? ");
+        int count = scanner.nextInt();
+
+        // Read the numbers and store them in the list
+        System.out.println("Enter " + count + " integers:");
+        for (int i = 0; i < count; i++) {
+            int num = scanner.nextInt();  // Read an integer
+            numbers.add(num);             // Add it to the list
+        }
+
+        // Using Iterator to traverse and print the list
+        Iterator<Integer> iterator = numbers.iterator();
+        System.out.println("\nUsing Iterator to traverse the list:");
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next()); // Print each number
+        }
+ 
+
+
+        // Close the scanner object to prevent resource leak
+        scanner.close();
+    }
+}

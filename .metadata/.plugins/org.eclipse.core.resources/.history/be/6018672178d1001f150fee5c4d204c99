@@ -1,0 +1,41 @@
+package com.wipro.oops.day8;
+
+abstract class Shape{
+	public abstract double area();
+}
+
+class Circle extends Shape{
+	private double radius;
+	public Circle(double radius) {
+		
+	}
+	@Override
+	public double area() {
+		// TODO Auto-generated method stub
+		return Math.PI*radius*radius;
+	}
+	
+}
+class Rectange extends Shape{
+	private double width;
+	private double height;
+	public Rectange( double width, double height) {
+		this.width=width;
+		this.height=width;
+	}
+	@Override
+	public double area() {
+		// TODO Auto-generated method stub
+		return width*width;
+	}
+	
+}
+public class Shapes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Shape[] shapes= {new Circle(5),new Rectange(4,6)};
+
+	}
+
+}

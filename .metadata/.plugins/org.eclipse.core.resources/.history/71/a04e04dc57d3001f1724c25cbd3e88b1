@@ -1,0 +1,33 @@
+package com.wipro.Codility.day10;
+
+class BinaryGap {
+
+    public static void main(String[] args) {
+		solution(10);
+		 
+	}
+    public static int solution(int N) {
+        // Convert the integer to its binary string representation
+        String binaryString = Integer.toBinaryString(N);
+
+        // Initialize variables to track the maximum gap and the current gap
+        int maxGap = 0;
+        int currentGap = 0;
+
+        // Iterate through each character in the binary string
+        for (char c : binaryString.toCharArray()) {
+            if (c == '1') {
+                // If a '1' is found, update maxGap if currentGap is greater
+                maxGap = Math.max(maxGap, currentGap);
+                // Reset currentGap for the next potential gap
+                currentGap = 0;
+            } else {
+                // If a '0' is found, increment the currentGap
+                currentGap++;
+            }
+        }
+
+        // Return the maximum gap found
+        return maxGap;
+    }
+}

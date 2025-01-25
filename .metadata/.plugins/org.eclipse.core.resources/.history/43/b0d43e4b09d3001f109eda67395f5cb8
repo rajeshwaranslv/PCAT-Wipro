@@ -1,0 +1,137 @@
+package com.wipro.Collections.day8;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ * Problem Statement: Managing a To-Do List Using ArrayList
+You want to create a simple application where users can manage their daily tasks. The application should allow the user to perform the following operations:
+ 
+Add a Task: Add a new task to the to-do list.
+View All Tasks: Display all the tasks currently in the list.
+Remove a Task: Remove a task from the list by selecting its position.
+Exit: Close the application.
+ 
+Example Interaction::
+ 
+To-Do List Application
+1. Add a Task
+2. View All Tasks
+3. Remove a Task
+4. Exit
+Enter your choice: 1
+ 
+Enter task to add: Buy groceries
+ 
+Task added!
+ 
+To-Do List Application
+1. Add a Task
+2. View All Tasks
+3. Remove a Task
+4. Exit
+Enter your choice: 1
+ 
+Enter task to add: Complete homework
+ 
+Task added!
+ 
+To-Do List Application
+1. Add a Task
+2. View All Tasks
+3. Remove a Task
+4. Exit
+Enter your choice: 2
+ 
+Your To-Do List:
+1. Buy groceries
+2. Complete homework
+ 
+To-Do List Application
+1. Add a Task
+2. View All Tasks
+3. Remove a Task
+4. Exit
+Enter your choice: 3
+ 
+Your To-Do List:
+1. Buy groceries
+2. Complete homework
+Enter the task number to remove: 1
+Task removed!
+ 
+To-Do List Application
+1. Add a Task
+2. View All Tasks
+3. Remove a Task
+4. Exit
+Enter your choice: 4
+ 
+Exiting the application. Goodbye!
+has context menu*/
+
+public class ToDoListApp {
+    public static void main(String[] args) {
+        ArrayList<String> toDoList = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("\nTo-Do List Application");
+            System.out.println("1. Add a Task");
+            System.out.println("2. View All Tasks");
+            System.out.println("3. Remove a Task");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            
+            int choice = scanner.nextInt();
+            scanner.nextLine();  // Consume the newline character
+            
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter task to add: ");
+                    String taskToAdd = scanner.nextLine();
+                    toDoList.add(taskToAdd);
+                    System.out.println("Task added!");
+                    break;
+                
+                case 2:
+                    if (toDoList.isEmpty()) {
+                        System.out.println("Your To-Do List is empty.");
+                    } else {
+                        System.out.println("Your To-Do List:");
+                        for (int i = 0; i < toDoList.size(); i++) {
+                            System.out.println((i + 1) + ". " + toDoList.get(i));
+                        }
+                    }
+                    break;
+                
+                case 3:
+                    if (toDoList.isEmpty()) {
+                        System.out.println("Your To-Do List is empty.");
+                    } else {
+                        System.out.println("Your To-Do List:");
+                        for (int i = 0; i < toDoList.size(); i++) {
+                            System.out.println((i + 1) + ". " + toDoList.get(i));
+                        }
+                        System.out.print("Enter the task number to remove: ");
+                        int taskToRemove = scanner.nextInt();
+                        if (taskToRemove >= 1 && taskToRemove <= toDoList.size()) {
+                            toDoList.remove(taskToRemove - 1);
+                            System.out.println("Task removed!");
+                        } else {
+                            System.out.println("Invalid task number.");
+                        }
+                    }
+                    break;
+                
+                case 4:
+                    System.out.println("Exiting the application. Goodbye!");
+                    scanner.close();
+                    return;
+                
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}

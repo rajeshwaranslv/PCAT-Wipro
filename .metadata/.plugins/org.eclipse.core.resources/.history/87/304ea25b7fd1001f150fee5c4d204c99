@@ -1,0 +1,86 @@
+package com.wipro.oops.day8;
+
+//Abstract Superclass
+abstract class PlaneA {
+ String type;
+ int capacity;
+
+ // Constructor
+ PlaneA(String type, int capacity) {
+     this.type = type;
+     this.capacity = capacity;
+ }
+
+ // Abstract method
+ abstract void fly();
+
+ // Non-abstract method
+ void displayDetails() {
+     System.out.println("Plane Type: " + type);
+     System.out.println("Capacity: " + capacity);
+ }
+}
+
+//Subclass: FighterPlane
+class FighterPlaneA extends PlaneA {
+ int weaponsCount;
+
+ // Constructor
+ FighterPlaneA(String type, int capacity, int weaponsCount) {
+     super(type, capacity);
+     this.weaponsCount = weaponsCount;
+ }
+
+ // Implementing abstract method
+ @Override
+ void fly() {
+     System.out.println(type + " is flying at supersonic speed!");
+ }
+
+ // Subclass-specific method
+ void attack() {
+     System.out.println(type + " is attacking with " + weaponsCount + " weapons.");
+ }
+}
+
+//Subclass: CargoPlane
+class CargoPlaneA extends PlaneA {
+ int cargoCapacity; // in tons
+
+ // Constructor
+ CargoPlaneA(String type, int capacity, int cargoCapacity) {
+     super(type, capacity);
+     this.cargoCapacity = cargoCapacity;
+ }
+
+ // Implementing abstract method
+ @Override
+ void fly() {
+     System.out.println(type + " is flying with heavy cargo.");
+ }
+
+ // Subclass-specific method
+ void loadCargo() {
+     System.out.println(type + " is loading " + cargoCapacity + " tons of cargo.");
+ }
+}
+
+//Main class
+public class AbstractMethodExample {
+ public static void main(String[] args) {
+     // Creating an object of FighterPlane
+     PlaneA fighterJet = new FighterPlaneA("Fighter Jet", 2, 8);
+     fighterJet.displayDetails();
+     fighterJet.fly();
+     ((FighterPlaneA) fighterJet).attack(); // Casting to call subclass-specific method
+
+     System.out.println();
+
+     // Creating an object of CargoPlane
+     PlaneA cargoPlane = new CargoPlaneA("Cargo Plane", 5, 20);
+     cargoPlane.displayDetails();
+     cargoPlane.fly();
+     ((CargoPlaneA) cargoPlane).loadCargo(); // Casting to call subclass-specific method
+ }
+}
+

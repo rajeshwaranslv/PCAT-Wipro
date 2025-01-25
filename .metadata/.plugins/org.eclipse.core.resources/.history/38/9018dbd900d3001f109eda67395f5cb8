@@ -1,0 +1,19 @@
+package com.wipro.Collections.day8;
+
+import java.util.Vector;
+import java.util.Enumeration;
+
+public class EnumerationExample {
+    public static void main(String[] args) {
+        Vector<String> vector = new Vector<>();
+        vector.add("Dog");
+        vector.add("Cat");
+        vector.add("Rabbit");
+
+        Enumeration<String> enumeration = vector.elements();
+        while (enumeration.hasMoreElements()) {
+            String animal = enumeration.nextElement();
+            System.out.println(animal);
+        }
+    }
+}

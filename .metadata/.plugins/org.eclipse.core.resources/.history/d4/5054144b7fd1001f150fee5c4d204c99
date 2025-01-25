@@ -1,0 +1,34 @@
+package com.wipro.oops.day7;
+
+ class Dog extends Object{
+//	 Template or blueprint
+//	 Defines state and behavior
+//	 Direct or Indirectly from the Object Class
+	String name;
+	int age;
+	String color;
+	String breed;
+	void runnig() {
+		System.out.println("Dog is running");
+	}
+	void sleeping() {
+		System.out.println("Dog is sleeping");
+	}
+//	Data Encapsulation:
+}
+
+public class ClassConcept {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Dog dog=new Dog();
+//		Object is an instance of class 
+//		It has some state and behavior
+		dog.runnig();
+		dog.name="oreo";
+		dog.age=2;
+		System.out.println(dog.name);
+		System.out.println(dog.age);
+	}
+
+}

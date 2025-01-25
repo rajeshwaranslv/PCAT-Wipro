@@ -1,0 +1,23 @@
+package com.wipro.oops;
+
+class Dog{
+	String name;
+	int age;
+	String color;
+	String breed;
+	void runnig() {
+		System.out.println("Dog is running");
+	}
+	void sleeping() {
+		System.out.println("Dog is sleeping");
+	}
+}
+
+public class ClassConcept {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new Dog();
+	}
+
+}

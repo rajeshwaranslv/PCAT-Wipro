@@ -1,0 +1,88 @@
+package com.wipro.oops.day8;
+
+//Interface
+interface PlaneI {
+ void displayDetails();
+ void fly();
+}
+
+//FighterPlane implementing Plane interface
+class FighterPlaneI implements PlaneI {
+ String type;
+ int capacity;
+ int weaponsCount;
+
+ // Constructor
+ FighterPlaneI(String type, int capacity, int weaponsCount) {
+     this.type = type;
+     this.capacity = capacity;
+     this.weaponsCount = weaponsCount;
+ }
+
+ // Implementing methods from Plane interface
+ @Override
+ public void displayDetails() {
+     System.out.println("Plane Type: " + type);
+     System.out.println("Capacity: " + capacity);
+ }
+
+ @Override
+ public void fly() {
+     System.out.println(type + " is flying at supersonic speed!");
+ }
+
+ // Subclass-specific method
+ void attack() {
+     System.out.println(type + " is attacking with " + weaponsCount + " weapons.");
+ }
+}
+
+//CargoPlane implementing Plane interface
+class CargoPlaneI implements PlaneI {
+ String type;
+ int capacity;
+ int cargoCapacity; // in tons
+
+ // Constructor
+ CargoPlaneI(String type, int capacity, int cargoCapacity) {
+     this.type = type;
+     this.capacity = capacity;
+     this.cargoCapacity = cargoCapacity;
+ }
+
+ // Implementing methods from Plane interface
+ @Override
+ public void displayDetails() {
+     System.out.println("Plane Type: " + type);
+     System.out.println("Capacity: " + capacity);
+ }
+
+ @Override
+ public void fly() {
+     System.out.println(type + " is flying with heavy cargo.");
+ }
+
+ // Subclass-specific method
+ void loadCargo() {
+     System.out.println(type + " is loading " + cargoCapacity + " tons of cargo.");
+ }
+}
+
+//Main class
+public class InterfaceExample {
+ public static void main(String[] args) {
+     // Creating an object of FighterPlane
+     PlaneI fighterJet = new FighterPlaneI("Fighter Jet", 2, 8);
+     fighterJet.displayDetails();
+     fighterJet.fly();
+     ((FighterPlaneI) fighterJet).attack(); // Casting to call subclass-specific method
+
+     System.out.println();
+
+     // Creating an object of CargoPlane
+     PlaneI cargoPlane = new CargoPlaneI("Cargo Plane", 5, 20);
+     cargoPlane.displayDetails();
+     cargoPlane.fly();
+     ((CargoPlaneI) cargoPlane).loadCargo(); // Casting to call subclass-specific method
+ }
+}

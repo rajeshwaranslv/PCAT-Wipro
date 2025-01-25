@@ -1,0 +1,20 @@
+package com.wipro.oops;
+
+class Dog{
+	String name;
+	int age;
+	String color;
+	String breed;
+	void runnig() {
+		System.out.println();
+	}
+}
+
+public class ClassConcept {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

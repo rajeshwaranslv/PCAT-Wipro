@@ -1,0 +1,94 @@
+package com.wipro.oops.day8;
+
+//Interface with default and static methods
+interface Plane {
+ // Public static final field (constants)
+ String GREETING = "Welcome to the Plane Interface!";
+
+ // Abstract method
+ void fly();
+
+ // Default method (Java 8+)
+ default void maintenanceCheck() {
+     System.out.println("Performing maintenance check for the plane.");
+ }
+
+ // Static method (Java 8+)
+ static void displayGreeting() {
+     System.out.println(GREETING);
+ }
+}
+
+//FighterPlane implementing Plane interface
+class FighterPlane implements Plane {
+ String type;
+ int capacity;
+ int weaponsCount;
+
+ // Constructor
+ FighterPlane(String type, int capacity, int weaponsCount) {
+     this.type = type;
+     this.capacity = capacity;
+     this.weaponsCount = weaponsCount;
+ }
+
+ // Implementing abstract method
+ @Override
+ public void fly() {
+     System.out.println(type + " is flying at supersonic speed!");
+ }
+
+ // Subclass-specific method
+ void attack() {
+     System.out.println(type + " is attacking with " + weaponsCount + " weapons.");
+ }
+}
+
+//CargoPlane implementing Plane interface
+class CargoPlane implements Plane {
+ String type;
+ int capacity;
+ int cargoCapacity; // in tons
+
+ // Constructor
+ CargoPlane(String type, int capacity, int cargoCapacity) {
+     this.type = type;
+     this.capacity = capacity;
+     this.cargoCapacity = cargoCapacity;
+ }
+
+ // Implementing abstract method
+ @Override
+ public void fly() {
+     System.out.println(type + " is flying with heavy cargo.");
+ }
+
+ // Subclass-specific method
+ void loadCargo() {
+     System.out.println(type + " is loading " + cargoCapacity + " tons of cargo.");
+ }
+}
+
+//Main class
+public class InterfaceExample1 {
+ public static void main(String[] args) {
+     // Calling the static method of the interface
+     Plane.displayGreeting();
+
+     System.out.println();
+
+     // Creating an object of FighterPlane
+     Plane fighterJet = new FighterPlane("Fighter Jet", 2, 8);
+     fighterJet.fly();
+     fighterJet.maintenanceCheck(); // Default method from interface
+     ((FighterPlane) fighterJet).attack(); // Casting to call subclass-specific method
+
+     System.out.println();
+
+     // Creating an object of CargoPlane
+     Plane cargoPlane = new CargoPlane("Cargo Plane", 5, 20);
+     cargoPlane.fly();
+     cargoPlane.maintenanceCheck(); // Default method from interface
+     ((CargoPlane) cargoPlane).loadCargo(); // Casting to call subclass-specific method
+ }
+}

@@ -1,0 +1,44 @@
+package com.wipro.Codility.day10;
+
+class Solution {
+    public int[] solution(int[] A, int K) {
+        int N = A.length;
+        
+        // Handle edge cases: empty array or no rotation needed
+        if (N == 0 || K % N == 0) {
+            return A;
+        }
+        
+        // Normalize K to avoid unnecessary rotations
+        K = K % N;
+        
+        // Create a new array to store the rotated result
+        int[] rotatedArray = new int[N];
+
+        // Perform the rotation
+        for (int i = 0; i < N; i++) {
+            rotatedArray[(i + K) % N] = A[i];
+        }
+
+        return rotatedArray;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        int[] A1 = {3, 8, 9, 7, 6};
+        int K1 = 3;
+        int[] result1 = solution.solution(A1, K1);
+        System.out.println(java.util.Arrays.toString(result1)); // Output: [9, 7, 6, 3, 8]
+
+        int[] A2 = {0, 0, 0};
+        int K2 = 1;
+        int[] result2 = solution.solution(A2, K2);
+        System.out.println(java.util.Arrays.toString(result2)); // Output: [0, 0, 0]
+
+        int[] A3 = {1, 2, 3, 4};
+        int K3 = 4;
+        int[] result3 = solution.solution(A3, K3);
+        System.out.println(java.util.Arrays.toString(result3)); // Output: [1, 2, 3, 4]
+    }
+}

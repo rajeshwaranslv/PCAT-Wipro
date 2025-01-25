@@ -1,0 +1,51 @@
+package com.wipro.oops.day8;
+
+//Superclass
+class Animal {
+ String name = "Animal";
+
+ // Constructor
+ Animal() {
+     System.out.println("Animal constructor called");
+ }
+
+ // Method
+ void sound() {
+     System.out.println("Animals make sounds");
+ }
+}
+
+//Subclass
+class Dog extends Animal {
+ String name = "Dog";
+
+ // Constructor
+ Dog() {
+     super(); // Calls the superclass constructor
+     System.out.println("Dog constructor called");
+ }
+
+ // Overridden method
+ @Override
+ void sound() {
+     System.out.println("Dogs bark");
+ }
+
+ // Method to demonstrate super
+ void display() {
+     System.out.println("Name in subclass: " + name);
+     System.out.println("Name in superclass: " + super.name); // Access superclass variable
+
+     sound();         // Calls subclass method
+     super.sound();   // Calls superclass method
+ }
+}
+
+//Main class
+public class SuperExample {
+ public static void main(String[] args) {
+     Dog dog = new Dog();
+     dog.display();
+ }
+}
+

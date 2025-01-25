@@ -1,0 +1,17 @@
+package com.wipro.oops;
+
+
+class ParentClass{
+//	Super() it is used call the parent class and first line of the constructor
+//	Default 0 parameter
+}
+
+
+public class ChainingEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

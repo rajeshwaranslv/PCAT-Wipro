@@ -1,0 +1,29 @@
+package com.wipro.oops.day7;
+
+class Temple{
+//	Step 1: restrict direct access to this fields
+	private String idol;
+//	Step 2: Provide controlled access
+//	controlled access can be given using getter and setter
+	public void setIdol(String offering) {
+		idol=offering;
+	}
+	public String getIdol() {
+		return idol;
+	}
+}
+// bean class or POOJO class
+
+public class Launch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Temple t=new Temple();
+		t.setIdol("flowers");
+		t.setIdol("Tulsi");
+		System.out.println(t.getIdol());
+
+	}
+
+}

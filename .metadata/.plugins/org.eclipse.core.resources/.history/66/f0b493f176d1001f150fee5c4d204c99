@@ -1,0 +1,31 @@
+package com.wipro.oops.day8;
+
+public class Person {
+	
+protected String name;
+protected int age;
+
+public Person(String name, int age) {
+	this.name=name;
+	this.age=age;
+}
+}
+
+class Student extends Person{
+private String grade;
+	public Student(String name, int age,String grade) {
+		super(name, age);
+		// TODO Auto-generated constructor stub
+		this.grade=grade;
+	}
+	public void displayDetails() {
+		System.out.println("Student Details: Name: "+name+",Age: "+age+", Grade:"+grade);
+	}
+	
+	public static void main(String[] args) {
+		Student s=new Student("Alice",20,"A");
+		s.displayDetails();
+	}
+	
+}
+

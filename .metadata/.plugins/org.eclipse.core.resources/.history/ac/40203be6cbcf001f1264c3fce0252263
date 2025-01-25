@@ -1,0 +1,11 @@
+package com.wipro.oops;
+
+public class Temple {
+
+	private String idol;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

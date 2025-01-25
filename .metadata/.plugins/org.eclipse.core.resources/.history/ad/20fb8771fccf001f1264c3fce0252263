@@ -1,0 +1,48 @@
+package com.wipro.oops;
+
+
+
+class Const{
+	public Const(int a) {
+		this(10.23f);
+		System.out.println("1 Parameter int const");
+		
+	}
+public Const() {
+	this(2,5);
+	System.out.println("0 Parameter int const");	
+		
+	}
+public Const(int a, int b) {
+ 
+	System.out.println("2 Parameter int const");	
+
+}
+public Const(float a) {
+	this();
+	System.out.println("float Parameter int const");	
+
+}
+
+// Local chaining is achieved using this() call
+
+// LC is used to call 
+ }
+
+
+public class ConstructorEx {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Const c=new Const();
+		Const c1=new Const();
+		Const c2=new Const();
+		Const c3=new Const();
+		
+		System.out.println(c);
+
+	}
+
+}

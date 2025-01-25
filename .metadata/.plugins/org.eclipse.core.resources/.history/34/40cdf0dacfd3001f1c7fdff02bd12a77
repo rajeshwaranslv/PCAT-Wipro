@@ -1,0 +1,225 @@
+
+
+class: 
+
+- A class is a blueprint or template for creating an object
+
+- It defines methods(behaviour) and variables(states)
+ 
+Object:
+
+- An object is an instance of a class
+
+- It has some state and behaviour
+ 
+Data Encapsulation
+
+-------------------
+
+-
+ 
+ 
+Constructor
+
+------------
+
+-  Constructor are also called specialized setter
+
+-  Constructors are used to initialize instance variables
+
+-  Can have any access modifiers
+
+-  Cannot have any return type
+
+-  Constructor name should be same as class name
+ 
+Default Constructor
+
+- It is the constructor which is automatically added in a class when there is no constructor present.
+
+- Default constructor is always zero parameter constructor.
+ 
+Local Chaining
+
+--------------
+
+- Local chaining is achieved using this() call.
+
+- LC is used to call the constructors of the same class
+ 
+this() call
+
+- this call should always be at the first line of the constructor.
+
+- we cannot have recursive constructor call.
+ 
+Constructor Chaining
+
+-------------------
+
+- Cosntructor chaining is the process of calling the parent class's constructor.
+
+- it is achieved using super() call
+ 
+ 
+- super() call is by default placed on the first line of the constructor
+
+- default super call will always call the zero parameter constructor
+
+- there cannot be both super() and this() call in a single constructor
+ 
+Inheritance
+
+-----------
+
+- inheritance is the concept of acquiring the properties and behaviour of one class to another class.
+
+- inheritance is achieved using extends keyword.
+ 
+- A class declared as final cannot be inherited
+
+- A method declared as final cannot be overriden
+ 
+ 
+Polymorphism
+
+------------
+
+_ it is the concept by which we can perform single action in different ways
+ 
+- Compile-time polymorphism or Static Polymorphism
+
+- Runtime polymorphism or Dynamic Polymorphism
+ 
+ 
+- Compile-time polymorphism or Static Polymorphism
+
+	- Method overloading is used to achieve compiletime polymorhism
+
+	- Method call is binded with method body during the compile time hence it is called as compile time 	  polymorphism
+ 
+- Runtime polymorphism or Dynamic Polymorphism
+
+	- Method Overriding is used to achieve runtime polymorphism
+
+	- It is process in which a call to overriden method is resolved during the runtime
+
+
+this keyword
+- this keyword is used to refer to the current instance of the class
+ 
+this() call
+- this is used to call the constructor of the same class
+ 
+super keyword
+- it is used to refer to the parent class members
+ 
+super() call
+- it is used to call the parent class constructor
+ 
+ 
+Abstraction
+-----------
+- It is a process of hiding the implementation details and showing only the functionality
+-  Two ways to achieve abstraction
+	1. Using Abstract class 
+	2. Using Interface
+ 
+- a method without body is called as an abstract method
+- a method with body is called as a concrete method
+- abstract method is defined using abstract keyword in the method signature
+- In a class even if there is a single abstract method, then that class should also be abstract class
+ 
+- Abstract class cannot be instantiated, apart from that abstract class has everything just as regular class.
+- Abstract class can have both abstract methods and non abstract methods
+ 
+- The class can be either abstract or final, not both.
+ 
+Interface
+----------
+- An interface is a blueprint of a class.
+- Interface is used to achieve abstraction.
+- It cannot instantiated.
+- From java 8, we can have default and static methods in an interface.
+- From java 9, we can have private methods in an interface
+- By interface we can have multiple inheritance
+ 
+- every method in an interface has public and abstract keyword by default
+- every data members in an interface has public, static and final.
+ 
+ 
+Static methods::
+- They are used to provide utility functions related to an interface without requiring an instance.
+- To centralize common logic that applies to all implementing class
+ 
+Default methods::
+- they are used to achieve backward compatibilty
+- To add new functionality to existing interface without breaking the implementing classes
+- Prevents forcing all existing implementations to implement the new method
+ 
+Private methods::
+- Encapsulate repetitve or helper logic within an interface
+- prevents exposing internal implementation details to implementing classes
+ 
+ 
+Exception Handling
+------------------
+- Exception refers to such mistakes that occur during the runtime.
+- Exception would result in abrupt termination of the program.
+- Exception handling refers to the process of handling the exception such that abrupt termination of program is avoided
+ 
+ 
+		catch(Throwable e)
+		{
+			System.out.println("Some Exception occured");
+		}
+ 
+		catch(Exception e)
+		{
+			System.out.println("Some Exception occured");
+		}
+ 
+There are two types of exceptions
+---------------------------------
+Checked Exception
+UnChecked Exception
+ 
+Checked Exception
+- Checked exceptions are the exceptions that are checked during the compile time.
+- checked exceptions enforces explicit handling
+- All the classes apart from RuntimeException class and its subclasses are checked exception class.
+ 
+Unchecked Exception
+- they are unchecked during the compile-time/Runtime
+- unchecked exceptions does not enforce explicit handling 
+- RuntimeException class and its subclasses are unchecked exception classes
+ 
+try
+---
+- it is used to specify a block where we should place the exception code.
+- We cannot use try block alone it has to be followed by catch or finally
+ 
+catch
+------
+- it is used to catch or handle the exception.
+- it must be preceded by a try block
+ 
+finally
+-------
+- It a block which is executed whether an exception is handled or not
+ 
+throws
+------
+- it is used to throw an exception from a method
+- it is used to duck an exception
+ 
+throw
+-----
+- It is used throw an exception
+ 
+Custom Exceptions
+-----------------
+ 
+ 
+ 
+ 

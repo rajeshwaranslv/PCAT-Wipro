@@ -1,0 +1,21 @@
+package com.wipro.oops.day8;
+
+abstract class Shape{
+	public abstract double area();
+}
+
+class Circle extends Shape{
+	private double radius;
+	public Circle(double radius) {
+		
+	}
+	
+}
+public class Shapes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

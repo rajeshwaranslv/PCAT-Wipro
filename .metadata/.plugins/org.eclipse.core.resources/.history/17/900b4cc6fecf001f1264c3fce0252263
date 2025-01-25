@@ -1,0 +1,16 @@
+package com.wipro.oops;
+
+
+class ParentClass{
+	
+}
+
+
+public class ChainingEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

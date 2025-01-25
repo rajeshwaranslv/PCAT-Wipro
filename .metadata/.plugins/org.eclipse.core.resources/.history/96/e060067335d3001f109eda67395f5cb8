@@ -1,0 +1,49 @@
+package com.wipro.Collections.day8;
+
+//Generic class
+class Box<T> {
+ private T value;
+
+ // Constructor
+ public Box(T value) {
+     this.value = value;
+ }
+
+ // Getter method
+ public T getValue() {
+     return value;
+ }
+
+ // Setter method
+ public void setValue(T value) {
+     this.value = value;
+ }
+
+ // Generic method example
+ public <E> void printArray(E[] array) {
+     for (E element : array) {
+         System.out.println(element);
+     }
+ }
+}
+
+public class GenericExample {
+ public static void main(String[] args) {
+     // Creating a Box instance for Integer
+     Box<Integer> intBox = new Box<>(10);
+     System.out.println("Box contains: " + intBox.getValue());
+
+     // Creating a Box instance for String
+     Box<String> strBox = new Box<>("Hello Generics!");
+     System.out.println("Box contains: " + strBox.getValue());
+
+     // Using generic method to print an array
+     Integer[] intArray = {1, 2, 3, 4};
+     String[] strArray = {"Apple", "Banana", "Cherry"};
+
+     // Call the generic method to print different types of arrays
+     intBox.printArray(intArray);
+     strBox.printArray(strArray);
+ }
+}
+

@@ -1,0 +1,43 @@
+package com.wipro.exception.day7;
+
+//AgeValidator.java
+public class AgeValidator {
+
+ // Method to validate age
+ public static void validateAge(int age) throws UnderageException, OverageException {
+     if (age < 18) {
+         // Throw UnderageException if age is less than 18
+         throw new UnderageException("Age is too low. Must be at least 18 to register.");
+     } else if (age > 60) {
+         // Throw OverageException if age is more than 60
+         throw new OverageException("Age is too high. Must be below 60 to register.");
+     }
+     System.out.println("Age is valid. Registration successful!");
+ }
+
+ public static void main(String[] args) {
+     try {
+         // Test case: Invalid age (underage)
+         validateAge(16);
+     } catch (UnderageException | OverageException e) {
+         System.out.println("Custom Exception Caught: " + e.getMessage());
+     }
+
+     try {
+         // Test case: Invalid age (overage)
+         validateAge(65);
+     } catch (UnderageException | OverageException e) {
+         System.out.println("Custom Exception Caught: " + e.getMessage());
+     }
+
+     try {
+         // Test case: Valid age
+         validateAge(30);
+     } catch (UnderageException | OverageException e) {
+         System.out.println("Custom Exception Caught: " + e.getMessage());
+     }
+
+     System.out.println("Program continues execution...");
+ }
+}
+

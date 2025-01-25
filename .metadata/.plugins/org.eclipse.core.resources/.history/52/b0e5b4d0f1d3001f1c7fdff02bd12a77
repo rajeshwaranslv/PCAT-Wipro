@@ -1,0 +1,33 @@
+package com.wipro.Codility.day10;
+
+class PermMissingElem {
+    public int solution(int[] A) {
+        int N = A.length + 1; // Total number of elements including the missing one
+        long totalSum = (long) N * (N + 1) / 2; // Sum of first N natural numbers
+        long arraySum = 0;
+
+        // Calculate the sum of elements in the array
+        for (int num : A) {
+            arraySum += num;
+        }
+
+        // The missing element is the difference between the expected sum and the actual sum
+        return (int) (totalSum - arraySum);
+    }
+
+    public static void main(String[] args) {
+        PermMissingElem solution = new PermMissingElem();
+
+        // Test case 1
+        int[] A1 = {2, 3, 1, 5};
+        System.out.println(solution.solution(A1)); // Output: 4
+
+        // Test case 2
+        int[] A2 = {1, 2, 3, 5};
+        System.out.println(solution.solution(A2)); // Output: 4
+
+        // Test case 3
+        int[] A3 = {};
+        System.out.println(solution.solution(A3)); // Output: 1
+    }
+}

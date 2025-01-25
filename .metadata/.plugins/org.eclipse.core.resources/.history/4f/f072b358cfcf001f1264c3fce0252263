@@ -1,0 +1,40 @@
+package com.wipro.oops;
+
+class Car{
+	private String brand;
+	private double price;
+	
+	public void setBrand(String brand) {
+		this.brand=brand;
+//		this: refer to the instance of the class or refer to the current object 
+	}
+	public void serPrice(double price) //local variable
+	{
+//		instance variable
+		this.price=price;
+	}
+	public String getBrand() // get this as a instance variable
+	{
+		return brand;
+	}
+	public double getPrice() {
+		return price;
+	}
+	
+}
+public class CarLaunch {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Car c=new Car();
+		c.setBrand("Toyota");
+		c.serPrice(10.95);
+		System.out.println(c.getBrand());
+		System.out.println(c.getPrice());
+		
+
+	}
+
+}

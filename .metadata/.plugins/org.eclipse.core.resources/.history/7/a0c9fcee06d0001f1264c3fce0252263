@@ -1,0 +1,43 @@
+package com.wipro.oops;
+//Polymorphism: Single action in different ways.
+
+//Runtime or Dynamic Polymorphism
+// Method overriding is achieved
+//
+
+
+//Compiletime or Static Polymorphism
+//Method overloading can be achieved
+// Method call is binded with method body during the compiletime 
+
+
+class Addition{
+	int add(int a,int b) {
+		return a+b;
+}
+	float add(float a,float b) {
+		return a+b;
+}
+	int add(int a) {
+		return a+a;
+}
+	int add(int a,int b,int c) {
+		return a+b+c;
+}
+	int add() {
+		return 10+20;
+}
+}
+
+public class Polymorphism {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Addition a =new Addition();
+		System.out.println(a.add());
+//		a.add(10,10);
+		
+	}
+
+}

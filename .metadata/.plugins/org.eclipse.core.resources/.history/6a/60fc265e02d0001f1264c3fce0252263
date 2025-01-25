@@ -1,0 +1,11 @@
+package com.wipro.oops;
+
+// Aquiring the properties of one class to another
+public class InheritanceEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

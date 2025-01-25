@@ -1,0 +1,40 @@
+package com.wipro.LogicBuilding.day9;
+
+public class CountCharacterInInfiniteString {
+    public static void main(String[] args) {
+        String s = "abcac";
+        long n = 10;
+
+        // Call the method to count occurrences of 'a'
+        long count = countCharacterInInfiniteString(s, n, 'a');
+
+        // Print the result
+        System.out.println("Occurrences of 'a': " + count);
+    }
+
+    // Method to count occurrences of a character in the first n characters of an infinitely repeated string
+    public static long countCharacterInInfiniteString(String s, long n, char target) {
+        long strLength = s.length();
+        long fullRepeats = n / strLength; // Number of full repetitions of s in n characters
+        long remainder = n % strLength; // Remaining characters after full repetitions
+
+        // Count occurrences of target in the full string s
+        long countInFullString = 0;
+        for (char c : s.toCharArray()) {
+            if (c == target) {
+                countInFullString++;
+            }
+        }
+
+        // Count occurrences in the remainder
+        long countInRemainder = 0;
+        for (int i = 0; i < remainder; i++) {
+            if (s.charAt(i) == target) {
+                countInRemainder++;
+            }
+        }
+
+        // Total occurrences = occurrences in full repetitions + occurrences in the remainder
+        return (fullRepeats * countInFullString) + countInRemainder;
+    }
+}

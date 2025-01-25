@@ -1,0 +1,24 @@
+package com.wipro.Codility.day10;
+
+class OddOccurrencesInArray {
+    public int solution(int[] A) {
+        int unpaired = 0;
+        for (int num : A) {
+            unpaired ^= num; // XOR operation pairs elements and leaves the unpaired one
+        }
+        return unpaired;
+    }
+
+    public static void main(String[] args) {
+        OddOccurrencesInArray solution = new OddOccurrencesInArray();
+
+        // Test case for unpaired element
+        int[] B = {9, 3, 9, 3, 9, 7, 9};
+        int unpaired = solution.solution(B);
+        System.out.println(unpaired); // Output: 7
+
+        int[] C = {1, 1, 2, 2, 3};
+        int unpaired2 = solution.solution(C);
+        System.out.println(unpaired2); // Output: 3
+    }
+}

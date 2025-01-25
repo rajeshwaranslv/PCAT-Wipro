@@ -1,0 +1,40 @@
+package com.wipro.oops.day7;
+
+public class ThrowThrowsDemo {
+
+    // Method declares a checked exception using 'throws'
+    public static void readFile(String fileName) throws Exception {
+        if (fileName == null || fileName.isEmpty()) {
+            // Throwing an exception manually
+            throw new Exception("File name cannot be null or empty.");
+        }
+        System.out.println("Reading file: " + fileName);
+    }
+
+    // Method for demonstrating an unchecked exception
+    public static void divide(int a, int b) {
+        if (b == 0) {
+            // Throwing an unchecked exception
+            throw new ArithmeticException("Division by zero is not allowed.");
+        }
+        System.out.println("Result: " + (a / b));
+    }
+
+    public static void main(String[] args) {
+        // Handling the checked exception using try-catch
+        try {
+            readFile(""); // This will throw an exception
+        } catch (Exception e) {
+            System.out.println("Checked Exception Caught: " + e.getMessage());
+        }
+
+        // Handling the unchecked exception
+        try {
+            divide(10, 0); // This will throw an ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Unchecked Exception Caught: " + e.getMessage());
+        }
+
+        System.out.println("Program continues execution...");
+    }
+}

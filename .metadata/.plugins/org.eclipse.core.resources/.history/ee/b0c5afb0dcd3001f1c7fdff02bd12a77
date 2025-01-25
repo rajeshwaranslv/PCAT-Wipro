@@ -1,0 +1,21 @@
+package com.wipro.algorithms.day4;
+
+public class myClass {
+	
+	public  int method1(int arr[]){
+		{
+			
+		}
+		return 0;
+	}
+	public static void main(String[] args) {
+		int []arr=new int[3];
+		myClass s=new myClass();
+		method1(s.method1(arr));
+		
+	}
+	private static void method1(int method1) {
+		// TODO Auto-generated method stub
+		
+	}
+}

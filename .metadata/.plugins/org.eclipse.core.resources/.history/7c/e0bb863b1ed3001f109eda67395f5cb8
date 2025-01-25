@@ -1,0 +1,33 @@
+package com.wipro.Collections.day8;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapExample {
+    public static void main(String[] args) {
+        // 1. User Login System
+        Map<String, String> userLogins = new HashMap<>();
+        userLogins.put("user1", "password123");
+        userLogins.put("user2", "mypassword");
+        userLogins.put("user1", "newpassword"); // Overwrites previous value
+        
+        System.out.println("User Logins: " + userLogins);
+
+        // 2. Word Frequency Counter
+        String text = "hello world hello java world java java";
+        Map<String, Integer> wordFrequency = new HashMap<>();
+        
+        for (String word : text.split(" ")) {
+            wordFrequency.put(word, wordFrequency.getOrDefault(word, 0) + 1);
+        }
+        
+        System.out.println("Word Frequency: " + wordFrequency);
+
+        // 3. Cache System
+        Map<String, String> cache = new HashMap<>();
+        cache.put("user1", "Profile Data");
+        cache.put("user2", "Settings Data");
+
+        System.out.println("Cache Data for user1: " + cache.get("user1"));
+    }
+}

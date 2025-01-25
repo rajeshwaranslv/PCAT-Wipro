@@ -1,0 +1,25 @@
+package com.wipro.Collections.day8;
+
+import java.util.TreeSet;
+
+public class TreeSetLeaderboard {
+    public static void main(String[] args) {
+        // TreeSet to store player scores in descending order
+        TreeSet<Integer> scores = new TreeSet<>((a, b) -> b - a);
+
+        // Adding scores
+        scores.add(500);
+        scores.add(1200);
+        scores.add(750);
+        scores.add(500); 
+        // Duplicate, will not be added
+
+        System.out.println("Leaderboard (Descending): " + scores);
+
+        // Accessing the top score
+        System.out.println("Top Score: " + scores.first());
+
+        // Accessing scores below a certain threshold
+        System.out.println("Scores below 800: " + scores.headSet(1200));
+    }
+}

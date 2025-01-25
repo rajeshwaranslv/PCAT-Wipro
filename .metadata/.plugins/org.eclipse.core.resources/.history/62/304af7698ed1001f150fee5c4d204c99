@@ -1,0 +1,125 @@
+package com.wipro.oops.day7;
+
+//Interface with default and static methods
+interface PlaneE {
+ // Public static final field (constants)
+ String GREETING = "Welcome to the Plane Interface!";
+
+ // Abstract method
+ void fly() throws Exception;
+
+ // Default method (Java 8+)
+ default void maintenanceCheck() {
+     System.out.println("Performing maintenance check for the plane.");
+ }
+
+ // Static method (Java 8+)
+ static void displayGreeting() {
+     System.out.println(GREETING);
+ }
+}
+
+//FighterPlane implementing Plane interface
+class FighterPlaneE implements PlaneE {
+ String type;
+ int capacity;
+ int weaponsCount;
+
+ // Constructor
+ FighterPlaneE(String type, int capacity, int weaponsCount) {
+     this.type = type;
+     this.capacity = capacity;
+     this.weaponsCount = weaponsCount;
+ }
+
+ // Implementing abstract method
+ @Override
+ public void fly() throws ArithmeticException {
+     if (capacity <= 0) {
+         throw new ArithmeticException("Capacity must be greater than zero.");
+     }
+     System.out.println(type + " is flying at supersonic speed!");
+ }
+
+ // Subclass-specific method
+ void attack() {
+     System.out.println(type + " is attacking with " + weaponsCount + " weapons.");
+ }
+}
+
+//CargoPlane implementing Plane interface
+class CargoPlaneE implements PlaneE {
+ String type;
+ int capacity;
+ int cargoCapacity; // in tons
+
+ // Constructor
+ CargoPlaneE(String type, int capacity, int cargoCapacity) {
+     this.type = type;
+     this.capacity = capacity;
+     this.cargoCapacity = cargoCapacity;
+ }
+
+ // Implementing abstract method
+ @Override
+ public void fly() throws NullPointerException {
+     if (type == null) {
+         throw new NullPointerException("Plane type cannot be null.");
+     }
+     System.out.println(type + " is flying with heavy cargo.");
+ }
+
+ // Subclass-specific method
+ void loadCargo() throws IllegalArgumentException {
+     if (cargoCapacity <= 0) {
+         throw new IllegalArgumentException("Cargo capacity must be positive.");
+     }
+     System.out.println(type + " is loading " + cargoCapacity + " tons of cargo.");
+ }
+}
+
+//Main class
+public class ExceptionExample {
+ public static void main(String[] args) {
+	 System.out.println("Main method started");
+	 System.out.println("Statement - 1");
+	 System.out.println("Statement -2");
+	 System.out.println(1/0);
+	 
+     try {
+//    	 Abrupt the termination of the program
+         // Calling the static method of the interface
+    	 PlaneE.displayGreeting();
+
+         System.out.println();
+
+         // Creating an object of FighterPlane
+         PlaneE fighterJet = new FighterPlaneE("Fighter Jet", 2, 8);
+         fighterJet.fly();
+         fighterJet.maintenanceCheck(); // Default method from interface
+         ((FighterPlaneE) fighterJet).attack(); // Casting to call subclass-specific method
+
+         System.out.println();
+
+         // Creating an object of CargoPlane
+         PlaneE cargoPlane = new CargoPlaneE(null, 5, 20);
+         cargoPlane.fly();
+         cargoPlane.maintenanceCheck(); // Default method from interface
+         ((CargoPlaneE) cargoPlane).loadCargo(); // Casting to call subclass-specific method
+
+     } catch (ArithmeticException e) {
+         System.err.println("Arithmetic Exception: " + e.getMessage());
+     } catch (NullPointerException e) {
+         System.err.println("Null Pointer Exception: " + e.getMessage());
+     } catch (IllegalArgumentException e) {
+         System.err.println("Illegal Argument Exception: " + e.getMessage());
+     } catch (Exception e) {
+         System.err.println("General Exception: " + e.getMessage());
+     } finally {
+         System.out.println("End of simulation.");
+     }
+   
+     
+     
+ }
+}

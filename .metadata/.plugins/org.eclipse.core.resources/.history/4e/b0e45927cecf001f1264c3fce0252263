@@ -1,0 +1,36 @@
+package com.wipro.oops;
+
+class Car{
+	private String brand;
+	private double price;
+	
+	public void setBrand(String b) {
+		brand=b;
+	}
+	public void serPrice(double p) {
+		price=p;
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public double getPrice() {
+		return price;
+	}
+	
+}
+public class CarLaunch {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Car c=new Car();
+		c.setBrand("Toyota");
+		c.serPrice(13.0);
+		System.out.println(c.getBrand());
+		System.out.println(c.getPrice());
+		
+
+	}
+
+}

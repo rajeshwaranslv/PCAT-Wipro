@@ -1,0 +1,26 @@
+package com.wipro.oops;
+
+class Temple{
+	private String idol;
+	
+	public void setIdol(String offering) {
+		idol=offering;
+	}
+	public String getIdol() {
+		return idol;
+	}
+}
+
+public class Launch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Temple t=new Temple();
+		t.setIdol("flowers");
+		t.setIdol("Tulsi");
+		System.out.println(t.getIdol());
+
+	}
+
+}

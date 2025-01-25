@@ -1,0 +1,47 @@
+Assignment 3: Function Design and Modularization
+
+ 
+Pseudocode:
+
+FUNCTION factorial(n):
+    IF n == 0 THEN
+        RETURN 1
+    END IF
+    result = 1
+    FOR i FROM 1 TO n DO
+        result = result * i
+    END FOR
+    RETURN result
+END FUNCTION
+
+Explanation:
+
+The function uses an iterative approach to calculate the factorial. Starting from 1, it multiplies successive integers up to the given number . The base case of  returns 1 directly.
+
+
+
+
+Function 2: Fibonacci Number Calculation
+
+The function calculates the nth Fibonacci number iteratively to improve efficiency compared to a recursive solution.
+
+Pseudocode:
+
+FUNCTION fibonacci(n):
+    IF n == 0 THEN
+        RETURN 0
+    ELSE IF n == 1 THEN
+        RETURN 1
+    END IF
+    prev = 0
+    curr = 1
+    FOR i FROM 2 TO n DO
+        temp = curr
+        curr = curr + prev
+        prev = temp
+    END FOR
+    RETURN curr
+END FUNCTION
+
+ 
+ 

@@ -1,0 +1,26 @@
+package com.wipro.LogicBuilding.day9;
+
+public class CountOccurrences {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 2, 5, 2, 4};
+        int target = 2;
+
+        // Call the method to count occurrences
+        int count = countOccurrences(arr, target);
+
+        // Print the result
+        System.out.println("Occurrences of " + target + ": " + count);
+    }
+
+    // Method to count occurrences of a target element in the array
+    public static int countOccurrences(int[] array, int target) {
+        int count = 0;
+        for (int num : array) {
+            if (num == target) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+

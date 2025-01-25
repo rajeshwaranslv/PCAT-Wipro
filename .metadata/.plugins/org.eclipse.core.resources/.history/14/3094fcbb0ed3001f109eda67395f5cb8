@@ -1,0 +1,44 @@
+package com.wipro.algorithms.day4;
+class PrivateClass{
+	  int a=1000;
+	
+	
+}
+public class AccessModifier {
+/*1.Private
+ * 2.Public
+ * 3.Default
+ * 4.Protected
+ * 
+ * 1. Private
+ * 
+ * */	
+	class A {
+	    private int data = 10; // Only accessible within this class
+
+	    private void display() {
+	        System.out.println("Private Method"+data);
+	    }
+	}
+	
+	class Example {
+	    protected int data = 10;
+
+	    protected void display() {
+	        System.out.println("Protected Method");
+	    }
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 
+		
+		PrivateClass privateClass=new PrivateClass();
+
+		System.out.println(privateClass.a);
+		
+	
+	}
+
+}

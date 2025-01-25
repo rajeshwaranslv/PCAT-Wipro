@@ -1,0 +1,60 @@
+package com.wipro.oops.day7;
+
+class Car{
+	private String brand;
+	private double price;
+	Car (String brand, double price){
+		this.brand=brand;
+		this.price=price;
+//		Specialized method for initializing the instance variable
+//		Creates the memory for instance variable
+//		Can not have a return type
+//		Same as class name
+//		N Number of constructor in the class, It is automatically create by JVM
+//		Change the parameter in any time with same or different type with same or number of parameter
+		
+	}
+	
+	public void setBrand(String brand) {
+		this.brand=brand;
+//		this: refer to the instance of the class or refer to the current object 
+	}
+	public void serPrice(double price) //local variable
+	{
+//		instance variable points to local variable
+		
+		this.price=price;
+	}
+	public String getBrand() // get this as a instance variable
+	{
+		return brand;
+	}
+	public double getPrice() {
+		return price;
+	}
+	@Override
+	public String toString() {
+		return brand +" "+price;
+		
+	}
+	
+	
+	
+}
+public class CarLaunch {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Car c=new Car("Maruti", 12);
+		System.out.println(c);
+		c.setBrand("Toyota");
+		c.serPrice(10.95);
+		System.out.println(c.getBrand());
+		System.out.println(c.getPrice());
+		
+
+	}
+
+}

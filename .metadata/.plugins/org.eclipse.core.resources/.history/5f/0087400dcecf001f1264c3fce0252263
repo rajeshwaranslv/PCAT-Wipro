@@ -1,0 +1,23 @@
+package com.wipro.oops;
+
+class Car{
+	private String brand;
+	private double price;
+	
+	public void setBrand(String b) {
+		brand=b;
+	}
+	public void serPrice(String p) {
+		price=p;
+	}
+	
+}
+public class CarLaunch {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,57 @@
+package com.wipro.oops;
+
+
+
+class Const{
+	public Const(int a) {
+//		3
+		this(10.23f);
+//		4
+		System.out.println("1 Parameter int const");
+		
+	}
+//	1
+public Const() {
+//	2
+	this(2,5);
+	System.out.println("0 Parameter int const");	
+		
+	}
+public Const(int a, int b) {
+ 
+	System.out.println("2 Parameter int const");	
+
+}
+public Const(float a) {
+	this();
+	System.out.println("1 Parameter float const");	
+
+}
+
+// Local chaining is achieved using this() call
+
+// LC is used to call the constructor of the same call
+// this() call should be first line of the constructor
+
+// Constructor chaining is the process of calling the parent class's constructor
+// We can only one either super or this call
+
+ }
+
+
+public class ConstructorEx {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Const c=new Const(10);
+//		Const c1=new Const();
+//		Const c2=new Const();
+//		Const c3=new Const();
+		
+ 
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.wipro.oops;
+
+class Test {
+    // Constructor with one int parameter
+    Test(int a) {
+        System.out.println("Constructor with int parameter");
+    }
+
+    // Constructor with one float parameter
+    Test(float a) {
+        System.out.println("Constructor with float parameter");
+    }
+
+    public static void main(String[] args) {
+        // This will cause ambiguity
+        Test obj = new Test(10); // Compiler can't decide between int and float.
+    }
+}
+

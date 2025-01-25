@@ -1,0 +1,16 @@
+package com.wipro.oops;
+
+
+class Addition{
+	int add(int a,int b) {
+}
+}
+
+public class Polymorphism {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

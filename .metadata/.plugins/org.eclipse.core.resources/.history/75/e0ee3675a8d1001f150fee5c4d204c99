@@ -1,0 +1,107 @@
+
+
+class: 
+
+- A class is a blueprint or template for creating an object
+
+- It defines methods(behaviour) and variables(states)
+ 
+Object:
+
+- An object is an instance of a class
+
+- It has some state and behaviour
+ 
+Data Encapsulation
+
+-------------------
+
+-
+ 
+ 
+Constructor
+
+------------
+
+-  Constructor are also called specialized setter
+
+-  Constructors are used to initialize instance variables
+
+-  Can have any access modifiers
+
+-  Cannot have any return type
+
+-  Constructor name should be same as class name
+ 
+Default Constructor
+
+- It is the constructor which is automatically added in a class when there is no constructor present.
+
+- Default constructor is always zero parameter constructor.
+ 
+Local Chaining
+
+--------------
+
+- Local chaining is achieved using this() call.
+
+- LC is used to call the constructors of the same class
+ 
+this() call
+
+- this call should always be at the first line of the constructor.
+
+- we cannot have recursive constructor call.
+ 
+Constructor Chaining
+
+-------------------
+
+- Cosntructor chaining is the process of calling the parent class's constructor.
+
+- it is achieved using super() call
+ 
+ 
+- super() call is by default placed on the first line of the constructor
+
+- default super call will always call the zero parameter constructor
+
+- there cannot be both super() and this() call in a single constructor
+ 
+Inheritance
+
+-----------
+
+- inheritance is the concept of acquiring the properties and behaviour of one class to another class.
+
+- inheritance is achieved using extends keyword.
+ 
+- A class declared as final cannot be inherited
+
+- A method declared as final cannot be overriden
+ 
+ 
+Polymorphism
+
+------------
+
+_ it is the concept by which we can perform single action in different ways
+ 
+- Compile-time polymorphism or Static Polymorphism
+
+- Runtime polymorphism or Dynamic Polymorphism
+ 
+ 
+- Compile-time polymorphism or Static Polymorphism
+
+	- Method overloading is used to achieve compiletime polymorhism
+
+	- Method call is binded with method body during the compile time hence it is called as compile time 	  polymorphism
+ 
+- Runtime polymorphism or Dynamic Polymorphism
+
+	- Method Overriding is used to achieve runtime polymorphism
+
+	- It is process in which a call to overriden method is resolved during the runtime
+
+ 

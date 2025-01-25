@@ -1,0 +1,120 @@
+package com.wipro.exception.day7;
+import java.util.Scanner;
+
+
+/*Problem Statement:
+
+Design and implement a Java program that simulates an ATM PIN validation system with custom exception handling. The program should allow a user to input their PIN and validate it against the following rules:
+ 
+1. PIN Length: The PIN must be exactly 4 digits long. If the PIN length is incorrect, throw a custom exception called InvalidPinLengthException.
+
+2. Numeric Validation: The PIN must contain only numeric digits. If the PIN contains non-numeric characters, throw a custom exception called NonNumericPinException.
+
+3. Attempts Limit: The user has a maximum of three attempts to enter the correct PIN. If the user exceeds the allowed attempts, throw a custom exception called ExceededAttemptsException and lock the account.
+
+4. Correct PIN Check: The entered PIN must match a pre-defined PIN (e.g., "1234"). If it doesn't match, prompt the user to re-enter the PIN.
+ 
+Requirements:
+
+Create a custom exception class for each validation rule.
+
+Use appropriate try-catch blocks to handle the exceptions.
+
+Provide meaningful error messages for each exception.
+
+Ensure that the program exits gracefully when exceptions are encountered.
+ 
+Example Scenario:
+
+Input 1: "12a4" → Throws NonNumericPinException.
+
+Input 2: "12345" → Throws InvalidPinLengthException.
+
+Input 3: "5678" → Incorrect PIN, prompts re-entry.
+
+Input 4: "5678" → Incorrect PIN again, prompts re-entry.
+
+Input 5: "1234" → Correct PIN, grants access.
+
+If attempts exceed 3, the system throws ExceededAttemptsException and locks the account.
+ */
+
+
+//Custom Exception for Invalid PIN Length
+class InvalidPinLengthException extends Exception {
+ public InvalidPinLengthException(String message) {
+     super(message);
+ }
+}
+
+//Custom Exception for Non-Numeric PIN
+class NonNumericPinException extends Exception {
+ public NonNumericPinException(String message) {
+     super(message);
+ }
+}
+
+//Custom Exception for Exceeded Attempts
+class ExceededAttemptsException extends Exception {
+ public ExceededAttemptsException(String message) {
+     super(message);
+ }
+}
+
+public class ATM {
+ private static final String CORRECT_PIN = "9960"; // Pre-defined correct PIN
+ private static int attempts = 0; // Counter for attempts
+
+ // Method to validate the PIN
+ public static void validatePin(String pin) throws InvalidPinLengthException, NonNumericPinException {
+     // Check if the PIN length is exactly 4 digits
+     if (pin.length() != 4) {
+         throw new InvalidPinLengthException("Invalid PIN length. PIN must be exactly 4 digits long.");
+     }
+
+     // Check if the PIN contains only numeric digits
+     if (!pin.matches("[0-9]+")) {
+         throw new NonNumericPinException("PIN contains non-numeric characters. Please enter a valid numeric PIN.");
+     }
+ }
+
+ // Main method for ATM PIN validation
+ public static void main(String[] args) {
+     Scanner scanner = new Scanner(System.in);
+     
+     while (attempts < 3) {
+         System.out.print("Enter your PIN: ");
+         String userPin = scanner.nextLine();
+
+         try {
+             // Validate the entered PIN
+             validatePin(userPin);
+
+             // Check if the entered PIN matches the correct PIN
+             if (userPin.equals(CORRECT_PIN)) {
+                 System.out.println("PIN correct. Access granted.");
+                 break; // Exit the loop if PIN is correct
+             } else {
+                 System.out.println("Incorrect PIN. Try again.");
+             }
+         } catch (InvalidPinLengthException | NonNumericPinException e) {
+             System.out.println(e.getMessage()); // Print the specific exception message
+         }
+
+         // Increment attempts after each failed attempt
+         attempts++;
+
+         // Check if the number of attempts has exceeded the limit
+         if (attempts >= 3) {
+             try {
+                 throw new ExceededAttemptsException("Too many incorrect attempts. Your account is locked.");
+             } catch (ExceededAttemptsException e) {
+                 System.out.println(e.getMessage());
+                 break; // Lock the account and exit
+             }
+         }
+     }
+
+     scanner.close(); // Close the scanner resource
+ }
+}

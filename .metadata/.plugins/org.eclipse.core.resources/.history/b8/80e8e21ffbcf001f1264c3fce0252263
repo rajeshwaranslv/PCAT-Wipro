@@ -1,0 +1,23 @@
+package com.wipro.oops;
+
+
+
+class Const{
+	public Const(int a) {
+		
+	}
+}
+
+
+public class ConstructorEx {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Const c=new Const(10);
+		System.out.println(c);
+
+	}
+
+}
